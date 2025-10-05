@@ -1,0 +1,44 @@
+Resume - Indra Purnomo
+========================
+
+Contact Information:
+- Email: [Your Email]
+- Phone: [Your Phone]
+- LinkedIn: https://www.linkedin.com/in/indra-purnomo-a36014291/
+- GitHub: https://github.com/ndraoo
+
+Professional Summary:
+Backend Developer with experience in developing POS systems, API development, and web applications using Laravel and modern web technologies.
+
+Work Experience:
+
+Backend Developer - Putra Muda Mandiri (Apr 2025 - Current)
+• Developed a POS (Point of Sale) system for restaurants with dynamic menu and order management features
+• Developed backend APIs using Firebase Cloud Messaging to schedule and send push notifications based on user roles and topics
+• Developed and maintained new features, including notifications, invoices, and attendance (presences) endpoints
+• Contributed to backend system architecture, endpoint testing, and collaborated closely with cross-functional teams
+• Followed clean code principles and utilized Git for version control and collaborative development
+
+Backend Developer Intern - Core Initiative (Oct 2024 - Oct 2024)
+• Developed secure backend features for user profile updates and password changes, implementing validation and encryption for data protection
+• Implemented soft delete functionality using Eloquent ORM, enabling reversible data removal and improving data safety
+• Built a recurring booking management system that allows users to schedule repeated reservations with optimized database queries
+• Designed and managed backend logic for room amenities, enabling dynamic configuration and integration with the booking system
+
+Web Development Intern - PT Dewan Studio (Feb 2023 - Mar 2023)
+• Developed an Inventory Management website using Laravel 9
+• Developed a Financial Monitoring website for a mosque using Laravel 9
+
+Skills:
+- Backend Development (Laravel, PHP)
+- API Development
+- Database Management
+- Git Version Control
+- Firebase Cloud Messaging
+- Web Development
+- Clean Code Principles
+
+Education:
+[Your Education Details]
+
+Note: This is a placeholder resume. Please replace this file with your actual PDF resume.
