@@ -13,7 +13,7 @@ const experiences: Experience[] = [
   {
     title: "Backend Developer",
     company: "Putra Muda Mandiri",
-    period: "Apr 2025 - Current",
+    period: "Apr 2025 - Currently",
     description: `• Developed a POS (Point of Sale) system for restaurants with dynamic menu and order management features.
 • Developed backend APIs using Firebase Cloud Messaging to schedule and send push notifications based on user roles and topics.
 • Developed and maintained new features, including notifications, invoices, and attendance (presences) endpoints.
