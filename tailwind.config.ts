@@ -15,7 +15,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"Sora"', '"Segoe UI"', "sans-serif"],
+        sans: ['"Manrope"', '"Segoe UI"', "sans-serif"],
         serif: ['"Instrument Serif"', "Georgia", "serif"],
       },
       colors: {

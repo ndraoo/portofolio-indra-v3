@@ -31,22 +31,22 @@ const skillGroups = [
 const Skills = () => {
   return (
     <section className="relative overflow-hidden px-6 py-24">
-      <div className="absolute inset-x-0 top-0 -z-10 h-72 bg-[radial-gradient(circle_at_82%_0%,hsl(194_60%_45%/.12),transparent_28%),radial-gradient(circle_at_12%_20%,hsl(18_92%_56%/.08),transparent_40%)]" />
+      <div className="absolute inset-x-0 top-0 -z-10 h-72 bg-[radial-gradient(circle_at_80%_0%,hsl(0_0%_0%/.08),transparent_28%),radial-gradient(circle_at_12%_20%,hsl(0_0%_100%/.45),transparent_36%)]" />
 
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="rounded-[2rem] border border-white/60 bg-white/80 p-8 shadow-medium backdrop-blur xl:p-10">
+        <div className="panel-3d-dark stack-offset-dark rounded-[2.25rem] p-8 text-white xl:p-10">
           <Badge
             variant="outline"
-            className="border-primary/15 bg-secondary/70 px-4 py-1.5 text-[0.7rem] uppercase tracking-[0.24em] text-primary"
+            className="chip-3d-dark rounded-full px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.24em] text-white/72"
           >
             Skills and Technologies
           </Badge>
 
-          <h2 className="mt-6 text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-5xl">
+          <h2 className="mt-6 text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
             The stack I use to ship real product work.
           </h2>
 
-          <p className="mt-5 text-base leading-8 text-muted-foreground md:text-lg">
+          <p className="mt-5 text-base leading-8 text-white/66 md:text-lg">
             My day-to-day work moves between frontend polish, backend implementation, mobile delivery, and the systems that keep product teams shipping smoothly.
           </p>
 
@@ -54,7 +54,7 @@ const Skills = () => {
             {["User flows", "API integration", "Business logic", "Cross-team delivery"].map((item) => (
               <div
                 key={item}
-                className="rounded-[1.25rem] border border-primary/10 bg-secondary/45 px-4 py-4 text-sm font-medium text-foreground/80"
+                className="rounded-[1.25rem] border border-white/10 bg-white/[0.05] px-4 py-4 text-sm font-medium text-white/72"
               >
                 {item}
               </div>
@@ -66,9 +66,9 @@ const Skills = () => {
           {skillGroups.map(({ icon: Icon, title, description, skills }) => (
             <article
               key={title}
-              className="rounded-[1.75rem] border border-primary/10 bg-[linear-gradient(135deg,hsl(0_0%_100%/.92),hsl(36_56%_94%/.92))] p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-medium"
+              className="panel-3d rounded-[1.85rem] p-6 transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="inline-flex rounded-2xl bg-primary/8 p-3 text-accent">
+              <div className="inline-flex rounded-2xl border border-black/8 bg-black/5 p-3 text-foreground">
                 <Icon className="h-5 w-5" />
               </div>
 
@@ -79,7 +79,7 @@ const Skills = () => {
                 {skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full border border-primary/10 bg-white/75 px-3 py-1.5 text-sm font-medium text-foreground/75"
+                    className="chip-3d rounded-full px-3 py-1.5 text-sm font-medium text-foreground/75"
                   >
                     {skill}
                   </span>

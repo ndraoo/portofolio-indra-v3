@@ -30,7 +30,7 @@ const experiences: Experience[] = [
   {
     title: "Software Developer",
     company: "Pinetop Technology Venture",
-    period: "Current Role",
+    period: "Dec 2025 - Present",
     location: "Hybrid - BSD, Indonesia",
     scope: "TalentCloud.Ai - Malaysia HQ collaboration",
     summary:
@@ -93,187 +93,250 @@ const experiences: Experience[] = [
   },
 ];
 
-const experienceStats = [
-  { value: "2", label: "current roles" },
-  { value: "Web + Mobile", label: "delivery scope" },
-  { value: "Indonesia + Malaysia", label: "team footprint" },
-];
+const currentExperiences = experiences.filter((item) => item.active);
+const previousExperiences = experiences.filter((item) => !item.active);
+
+const ExperienceCard = ({ exp, index }: { exp: Experience; index: number }) => {
+  const dark = Boolean(exp.featured);
+
+  return (
+    <article
+      className={cn(
+        "h-full rounded-[2.2rem] p-7 animate-fade-in md:p-8",
+        dark
+          ? "panel-3d-dark stack-offset-dark text-white"
+          : "panel-3d stack-offset text-foreground"
+      )}
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <div className="flex flex-wrap gap-2">
+        {dark ? (
+          <Badge className="chip-3d-dark rounded-full px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.2em] text-white/72">
+            Primary Role
+          </Badge>
+        ) : (
+          <Badge
+            variant="outline"
+            className="chip-3d rounded-full px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.2em] text-foreground"
+          >
+            Active Role
+          </Badge>
+        )}
+
+        {exp.employmentType && (
+          <Badge
+            variant="outline"
+            className={cn(
+              "rounded-full px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.2em]",
+              dark
+                ? "border-white/12 bg-white/[0.05] text-white/68"
+                : "chip-3d text-foreground/72"
+            )}
+          >
+            {exp.employmentType}
+          </Badge>
+        )}
+      </div>
+
+      <div className="mt-7 flex items-start gap-4">
+        <div
+          className={cn(
+            "rounded-2xl p-3",
+            dark ? "border border-white/10 bg-white/[0.06]" : "border border-black/8 bg-black/5"
+          )}
+        >
+          <Briefcase className="h-5 w-5" />
+        </div>
+
+        <div>
+          <h3 className={cn("text-2xl font-semibold tracking-tight", dark ? "text-white" : "text-foreground")}>
+            {exp.title}
+          </h3>
+          <p className={cn("mt-2 text-base font-medium", dark ? "text-white/72" : "text-foreground/80")}>
+            {exp.company}
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-6 flex flex-wrap gap-3 text-sm">
+        <div
+          className={cn(
+            "rounded-full px-4 py-2",
+            dark ? "border border-white/10 bg-white/[0.05] text-white/68" : "chip-3d text-foreground/72"
+          )}
+        >
+          {exp.period}
+        </div>
+        <div
+          className={cn(
+            "rounded-full px-4 py-2",
+            dark ? "border border-white/10 bg-white/[0.05] text-white/68" : "chip-3d text-foreground/72"
+          )}
+        >
+          {exp.location}
+        </div>
+      </div>
+
+      <div
+        className={cn(
+          "mt-7 rounded-[1.7rem] border p-5",
+          dark ? "border-white/10 bg-white/[0.05]" : "border-black/8 bg-black/[0.025]"
+        )}
+      >
+        <div className={cn("flex items-center gap-2 text-sm uppercase tracking-[0.22em]", dark ? "text-white/46" : "text-foreground/52")}>
+          <Sparkles className="h-4 w-4" />
+          Impact Snapshot
+        </div>
+        <p className={cn("mt-3 text-base leading-8", dark ? "text-white/68" : "text-muted-foreground")}>
+          {exp.summary}
+        </p>
+      </div>
+
+      <ul className="mt-6 grid gap-3">
+        {exp.highlights.map((item) => (
+          <li
+            key={item}
+            className={cn(
+              "flex items-start gap-3 rounded-[1.4rem] border p-4",
+              dark ? "border-white/10 bg-white/[0.04]" : "border-black/8 bg-white/70"
+            )}
+          >
+            <CheckCircle2 className={cn("mt-0.5 h-5 w-5 flex-shrink-0", dark ? "text-white" : "text-foreground")} />
+            <span className={cn("text-sm leading-7 md:text-[0.95rem]", dark ? "text-white/72" : "text-foreground/80")}>
+              {item}
+            </span>
+          </li>
+        ))}
+      </ul>
+
+      <div className="mt-6 flex flex-wrap gap-2">
+        {exp.stack.map((item) => (
+          <span
+            key={item}
+            className={cn(
+              "rounded-full px-3 py-1.5 text-sm font-medium",
+              dark ? "border border-white/12 bg-white/[0.05] text-white/72" : "chip-3d text-foreground/74"
+            )}
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+
+      <div className={cn("mt-6 flex items-center gap-2 text-sm", dark ? "text-white/46" : "text-muted-foreground")}>
+        <MapPin className="h-4 w-4" />
+        <span>{exp.location}</span>
+        <span className="opacity-50">/</span>
+        <Globe2 className="h-4 w-4" />
+        <span>{exp.scope}</span>
+      </div>
+    </article>
+  );
+};
+
+const PreviousExperienceCard = ({ exp, index }: { exp: Experience; index: number }) => (
+  <article
+    className="panel-3d rounded-[1.9rem] p-6 animate-fade-in md:p-7"
+    style={{ animationDelay: `${index * 0.08}s` }}
+  >
+    <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+      <div className="max-w-2xl">
+        <p className="text-xs uppercase tracking-[0.22em] text-foreground/48">{exp.period}</p>
+        <h3 className="mt-3 text-2xl font-semibold tracking-tight text-foreground">{exp.title}</h3>
+        <p className="mt-2 text-base font-medium text-foreground/78">{exp.company}</p>
+        <p className="mt-4 text-sm leading-7 text-muted-foreground md:text-base">{exp.summary}</p>
+      </div>
+
+      <div className="flex flex-wrap gap-2 lg:max-w-sm lg:justify-end">
+        {exp.stack.map((item) => (
+          <span key={item} className="chip-3d rounded-full px-3 py-1.5 text-sm font-medium text-foreground/74">
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
+  </article>
+);
 
 const WorkExperience = () => {
   const [expanded, setExpanded] = useState(false);
-  const displayedExperiences = expanded ? experiences : experiences.slice(0, 2);
 
   return (
     <section id="experience" className="relative overflow-hidden px-6 py-24">
-      <div className="absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(circle_at_20%_10%,hsl(18_92%_56%/.12),transparent_45%),radial-gradient(circle_at_90%_0%,hsl(194_60%_45%/.12),transparent_28%)]" />
+      <div className="absolute left-[10%] top-20 -z-10 h-52 w-52 rounded-full bg-black/6 blur-3xl" />
+      <div className="absolute right-[8%] top-32 -z-10 h-40 w-40 rounded-[2rem] border border-black/6 bg-white/45 blur-2xl" />
 
       <div className="mx-auto max-w-6xl">
-        <div className="mb-14 grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+        <div className="mb-14 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
           <div className="max-w-3xl">
             <Badge
               variant="outline"
-              className="border-primary/15 bg-white/70 px-4 py-1.5 text-[0.7rem] uppercase tracking-[0.24em] text-primary"
+              className="chip-3d rounded-full px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.24em] text-foreground"
             >
               Work Experience
             </Badge>
             <h2 className="mt-5 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-              Delivering product work across backend, frontend, and mobile.
+              Current roles up front, earlier work kept clean and easy to scan.
             </h2>
             <p className="mt-4 text-lg leading-8 text-muted-foreground">
-              My experience now spans two active tracks: fullstack product development for TalentCloud.Ai and part-time software engineering delivery for Putra Muda Mandiri.
+              The active work section now highlights both ongoing roles first, while earlier experience stays available as supporting history below.
             </p>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-3">
-            {experienceStats.map((item) => (
-              <div
-                key={item.label}
-                className="rounded-[1.5rem] border border-primary/10 bg-white/80 p-4 shadow-soft backdrop-blur"
-              >
-                <p className="text-sm uppercase tracking-[0.2em] text-primary/60">{item.label}</p>
+            {[
+              { value: "2", label: "current roles" },
+              { value: "Fullstack", label: "delivery focus" },
+              { value: "Indonesia + Malaysia", label: "team footprint" },
+            ].map((item) => (
+              <div key={item.label} className="panel-3d rounded-[1.6rem] p-4">
+                <p className="text-xs uppercase tracking-[0.22em] text-foreground/48">{item.label}</p>
                 <p className="mt-3 text-lg font-semibold text-foreground">{item.value}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="relative">
-          <div className="absolute bottom-10 left-5 top-6 hidden w-px bg-gradient-to-b from-accent/50 via-primary/20 to-transparent md:block" />
-
-          <div className="space-y-6">
-            {displayedExperiences.map((exp, index) => (
-              <article
-                key={`${exp.company}-${exp.title}`}
-                className="relative animate-fade-in md:pl-16"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="absolute left-[14px] top-10 hidden h-3 w-3 rounded-full bg-accent ring-8 ring-background md:block" />
-
-                <div
-                  className={cn(
-                    "relative overflow-hidden rounded-[2rem] border p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-medium md:p-8",
-                    exp.featured
-                      ? "border-primary/10 bg-[linear-gradient(135deg,hsl(0_0%_100%),hsl(36_56%_94%))]"
-                      : exp.active
-                        ? "border-accent/15 bg-[linear-gradient(135deg,hsl(0_0%_100%),hsl(24_94%_96%))]"
-                        : "border-white/60 bg-white/80 backdrop-blur"
-                  )}
-                >
-                  <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
-
-                  <div className="flex flex-col gap-8 lg:flex-row">
-                    <div className="lg:w-[18rem] lg:flex-shrink-0">
-                      <div className="mb-4 flex flex-wrap gap-2">
-                        {exp.featured && (
-                          <Badge className="bg-primary text-primary-foreground">Primary Role</Badge>
-                        )}
-                        {exp.active && (
-                          <Badge
-                            variant="outline"
-                            className="border-accent/20 bg-accent/10 text-accent"
-                          >
-                            Current
-                          </Badge>
-                        )}
-                        {exp.employmentType && (
-                          <Badge
-                            variant="outline"
-                            className="border-primary/10 bg-white/75 text-foreground/70"
-                          >
-                            {exp.employmentType}
-                          </Badge>
-                        )}
-                        <Badge
-                          variant="outline"
-                          className="border-primary/10 bg-white/75 text-foreground/70"
-                        >
-                          {exp.period}
-                        </Badge>
-                      </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="rounded-2xl bg-primary p-3 text-primary-foreground shadow-soft">
-                          <Briefcase className="h-5 w-5" />
-                        </div>
-
-                        <div>
-                          <h3 className="text-2xl font-semibold tracking-tight text-foreground">
-                            {exp.title}
-                          </h3>
-                          <p className="mt-2 text-base font-medium text-foreground/85">{exp.company}</p>
-                        </div>
-                      </div>
-
-                      <div className="mt-5 space-y-3 text-sm text-muted-foreground">
-                        <p className="flex items-center gap-2">
-                          <MapPin className="h-4 w-4 text-accent" />
-                          {exp.location}
-                        </p>
-                        <p className="flex items-center gap-2">
-                          <Globe2 className="h-4 w-4 text-accent" />
-                          {exp.scope}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex-1">
-                      <div className="rounded-[1.5rem] border border-primary/8 bg-secondary/35 p-5">
-                        <div className="flex items-center gap-2 text-sm font-medium uppercase tracking-[0.2em] text-primary/60">
-                          <Sparkles className="h-4 w-4 text-accent" />
-                          Impact Snapshot
-                        </div>
-                        <p className="mt-3 text-base leading-8 text-muted-foreground">{exp.summary}</p>
-                      </div>
-
-                      <ul className="mt-6 grid gap-3">
-                        {exp.highlights.map((item) => (
-                          <li key={item} className="flex items-start gap-3 rounded-2xl bg-white/70 p-4 shadow-soft">
-                            <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" />
-                            <span className="text-sm leading-7 text-foreground/80 md:text-[0.95rem]">
-                              {item}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      <div className="mt-6 flex flex-wrap gap-2">
-                        {exp.stack.map((item) => (
-                          <span
-                            key={item}
-                            className="rounded-full border border-primary/10 bg-white/75 px-3 py-1.5 text-sm font-medium text-foreground/75"
-                          >
-                            {item}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+        <div className="grid gap-6 lg:grid-cols-2">
+          {currentExperiences.map((exp, index) => (
+            <ExperienceCard key={`${exp.company}-${exp.title}`} exp={exp} index={index} />
+          ))}
         </div>
 
-        {experiences.length > 2 && (
-          <div className="mt-12 flex justify-center">
+        <div className="mt-16">
+          <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.22em] text-foreground/48">Earlier Experience</p>
+              <h3 className="mt-2 text-2xl font-semibold tracking-tight text-foreground">
+                Foundation work that shaped the way I build today.
+              </h3>
+            </div>
+
             <Button
               variant="outline"
               onClick={() => setExpanded(!expanded)}
-              className="group rounded-full border-primary/15 bg-white/70 px-6 backdrop-blur"
+              className="chip-3d rounded-full px-6 text-foreground"
             >
               {expanded ? (
                 <>
-                  Show Less <ChevronUp className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-1" />
+                  Show Less <ChevronUp className="ml-2 h-4 w-4" />
                 </>
               ) : (
                 <>
-                  View Earlier Experience{" "}
-                  <ChevronDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
+                  View Earlier Experience <ChevronDown className="ml-2 h-4 w-4" />
                 </>
               )}
             </Button>
           </div>
-        )}
+
+          {expanded && (
+            <div className="grid gap-4">
+              {previousExperiences.map((exp, index) => (
+                <PreviousExperienceCard key={`${exp.company}-${exp.title}`} exp={exp} index={index} />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
