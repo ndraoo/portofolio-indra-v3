@@ -72,7 +72,7 @@ const About = () => {
               key={title}
               className="panel-3d rounded-[1.85rem] p-6 transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="inline-flex rounded-2xl border border-black/8 bg-black/5 p-3 text-foreground">
+              <div className="inline-flex rounded-2xl border border-primary/12 bg-accent/12 p-3 text-primary">
                 <Icon className="h-5 w-5" />
               </div>
               <h3 className="mt-5 text-xl font-semibold text-foreground">{title}</h3>

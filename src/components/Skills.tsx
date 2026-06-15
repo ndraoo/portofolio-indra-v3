@@ -31,7 +31,7 @@ const skillGroups = [
 const Skills = () => {
   return (
     <section className="relative overflow-hidden px-6 py-24">
-      <div className="absolute inset-x-0 top-0 -z-10 h-72 bg-[radial-gradient(circle_at_80%_0%,hsl(0_0%_0%/.08),transparent_28%),radial-gradient(circle_at_12%_20%,hsl(0_0%_100%/.45),transparent_36%)]" />
+      <div className="absolute inset-x-0 top-0 -z-10 h-72 bg-[radial-gradient(circle_at_80%_0%,hsl(331_74%_63%/.18),transparent_28%),radial-gradient(circle_at_12%_20%,hsl(0_0%_100%/.45),transparent_36%)]" />
 
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="panel-3d-dark stack-offset-dark rounded-[2.25rem] p-8 text-white xl:p-10">
@@ -68,7 +68,7 @@ const Skills = () => {
               key={title}
               className="panel-3d rounded-[1.85rem] p-6 transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="inline-flex rounded-2xl border border-black/8 bg-black/5 p-3 text-foreground">
+              <div className="inline-flex rounded-2xl border border-primary/12 bg-accent/12 p-3 text-primary">
                 <Icon className="h-5 w-5" />
               </div>
 

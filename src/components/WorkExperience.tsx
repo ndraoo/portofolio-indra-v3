@@ -142,7 +142,7 @@ const ExperienceCard = ({ exp, index }: { exp: Experience; index: number }) => {
         <div
           className={cn(
             "rounded-2xl p-3",
-            dark ? "border border-white/10 bg-white/[0.06]" : "border border-black/8 bg-black/5"
+            dark ? "border border-white/10 bg-white/[0.06]" : "border border-primary/12 bg-accent/12"
           )}
         >
           <Briefcase className="h-5 w-5" />
@@ -180,7 +180,7 @@ const ExperienceCard = ({ exp, index }: { exp: Experience; index: number }) => {
       <div
         className={cn(
           "mt-7 rounded-[1.7rem] border p-5",
-          dark ? "border-white/10 bg-white/[0.05]" : "border-black/8 bg-black/[0.025]"
+          dark ? "border-white/10 bg-white/[0.05]" : "border-primary/12 bg-accent/[0.08]"
         )}
       >
         <div className={cn("flex items-center gap-2 text-sm uppercase tracking-[0.22em]", dark ? "text-white/46" : "text-foreground/52")}>
@@ -198,7 +198,7 @@ const ExperienceCard = ({ exp, index }: { exp: Experience; index: number }) => {
             key={item}
             className={cn(
               "flex items-start gap-3 rounded-[1.4rem] border p-4",
-              dark ? "border-white/10 bg-white/[0.04]" : "border-black/8 bg-white/70"
+              dark ? "border-white/10 bg-white/[0.04]" : "border-primary/12 bg-card/75"
             )}
           >
             <CheckCircle2 className={cn("mt-0.5 h-5 w-5 flex-shrink-0", dark ? "text-white" : "text-foreground")} />
@@ -263,8 +263,8 @@ const WorkExperience = () => {
 
   return (
     <section id="experience" className="relative overflow-hidden px-6 py-24">
-      <div className="absolute left-[10%] top-20 -z-10 h-52 w-52 rounded-full bg-black/6 blur-3xl" />
-      <div className="absolute right-[8%] top-32 -z-10 h-40 w-40 rounded-[2rem] border border-black/6 bg-white/45 blur-2xl" />
+      <div className="absolute left-[10%] top-20 -z-10 h-52 w-52 rounded-full bg-accent/18 blur-3xl" />
+      <div className="absolute right-[8%] top-32 -z-10 h-40 w-40 rounded-[2rem] border border-primary/12 bg-card/55 blur-2xl" />
 
       <div className="mx-auto max-w-6xl">
         <div className="mb-14 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">

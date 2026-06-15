@@ -33,8 +33,8 @@ const Hero = () => {
 
   return (
     <section className="relative overflow-hidden px-6 pb-24 pt-28">
-      <div className="absolute left-[8%] top-16 -z-10 h-48 w-48 rounded-[2.5rem] border border-black/8 bg-white/35 blur-2xl" />
-      <div className="absolute right-[12%] top-24 -z-10 h-56 w-56 rounded-full bg-black/6 blur-3xl" />
+      <div className="absolute left-[8%] top-16 -z-10 h-48 w-48 rounded-[2.5rem] border border-primary/12 bg-accent/12 blur-2xl" />
+      <div className="absolute right-[12%] top-24 -z-10 h-56 w-56 rounded-full bg-accent/18 blur-3xl" />
 
       <div className="mx-auto grid min-h-[calc(100vh-7rem)] max-w-6xl gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div className="animate-fade-in">
@@ -87,8 +87,8 @@ const Hero = () => {
         </div>
 
         <div className="relative animate-fade-in" style={{ animationDelay: "0.15s" }}>
-          <div className="absolute -left-6 top-12 hidden h-40 w-40 -rotate-12 rounded-[2rem] border border-black/10 bg-white/55 shadow-[0_30px_60px_-36px_rgba(0,0,0,0.4)] backdrop-blur md:block" />
-          <div className="absolute -right-6 bottom-0 hidden h-28 w-56 rotate-6 rounded-[2rem] border border-black/10 bg-black/90 p-5 text-white shadow-[0_40px_80px_-44px_rgba(0,0,0,0.88)] md:block">
+          <div className="absolute -left-6 top-12 hidden h-40 w-40 -rotate-12 rounded-[2rem] border border-primary/12 bg-card/60 shadow-[0_30px_60px_-36px_rgba(132,30,78,0.34)] backdrop-blur md:block" />
+          <div className="absolute -right-6 bottom-0 hidden h-28 w-56 rotate-6 rounded-[2rem] border border-primary/20 bg-primary/95 p-5 text-primary-foreground shadow-[0_40px_80px_-44px_rgba(95,23,56,0.72)] md:block">
             <p className="text-xs uppercase tracking-[0.24em] text-white/55">Current Focus</p>
             <p className="mt-3 text-lg font-semibold">TalentCloud.Ai</p>
             <p className="mt-2 text-sm leading-6 text-white/65">Fullstack web and mobile feature delivery.</p>
