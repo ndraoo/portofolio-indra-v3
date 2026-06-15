@@ -5,6 +5,8 @@ import { ArrowUpRight, ChevronDown, ChevronUp, Layers3 } from "lucide-react";
 
 interface Project {
   title: string;
+  period?: string;
+  association?: string;
   description: string;
   skills: string[];
   link?: string;
@@ -12,6 +14,14 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    title: "LangitHub Mobile",
+    period: "Sep 2025 - Present",
+    association: "Associated with Putra Muda Mandiri",
+    description:
+      "A superapp mobile application for Langit Initiatives and an interactive Islamic app for tracking your prayers journey.",
+    skills: ["Superapp", "Mushaf/Quran", "Prayer Times", "Hijri Calendar", "Qiblah"],
+  },
   {
     title: "Brightschools",
     description: "School management system with parent and teacher portals.",
@@ -86,6 +96,20 @@ const Projects = () => {
             </div>
 
             <div className="mt-6 max-w-2xl">
+              {(featuredProject.period || featuredProject.association) && (
+                <div className="mb-4 flex flex-wrap gap-2">
+                  {featuredProject.period && (
+                    <span className="rounded-full border border-white/12 bg-white/[0.05] px-3 py-1.5 text-sm text-white/68">
+                      {featuredProject.period}
+                    </span>
+                  )}
+                  {featuredProject.association && (
+                    <span className="rounded-full border border-white/12 bg-white/[0.05] px-3 py-1.5 text-sm text-white/68">
+                      {featuredProject.association}
+                    </span>
+                  )}
+                </div>
+              )}
               <h3 className="text-3xl font-semibold tracking-tight text-white">{featuredProject.title}</h3>
               <p className="mt-4 text-base leading-8 text-white/66 md:text-lg">
                 {featuredProject.description}
@@ -135,6 +159,20 @@ const Projects = () => {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
+                      {(project.period || project.association) && (
+                        <div className="mb-3 flex flex-wrap gap-2">
+                          {project.period && (
+                            <span className="chip-3d rounded-full px-3 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-foreground/72">
+                              {project.period}
+                            </span>
+                          )}
+                          {project.association && (
+                            <span className="chip-3d rounded-full px-3 py-1.5 text-xs font-medium uppercase tracking-[0.12em] text-foreground/72">
+                              {project.association}
+                            </span>
+                          )}
+                        </div>
+                      )}
                       <h3 className="text-2xl font-semibold tracking-tight text-foreground">{project.title}</h3>
                       <p className="mt-3 text-sm leading-7 text-muted-foreground md:text-base">
                         {project.description}
