@@ -4,7 +4,7 @@ import { ArrowUpRight, Download, Github, Linkedin } from "lucide-react";
 const Contact = () => {
   return (
     <footer id="contact" className="relative overflow-hidden px-6 py-20">
-      <div className="absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(circle_at_20%_0%,hsl(0_0%_100%/.5),transparent_30%),radial-gradient(circle_at_90%_20%,hsl(331_74%_63%/.2),transparent_24%)]" />
+      <div className="absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(circle_at_20%_0%,hsl(0_0%_100%/.46),transparent_30%),radial-gradient(circle_at_90%_20%,hsl(0_0%_0%/.08),transparent_24%)]" />
 
       <div className="mx-auto max-w-6xl">
         <div className="panel-3d-dark stack-offset-dark rounded-[2.4rem] p-8 text-white md:p-10">

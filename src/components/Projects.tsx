@@ -63,7 +63,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="relative overflow-hidden px-6 py-24">
-      <div className="absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(circle_at_15%_0%,hsl(0_0%_100%/.58),transparent_34%),radial-gradient(circle_at_88%_15%,hsl(331_74%_63%/.18),transparent_24%)]" />
+      <div className="absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(circle_at_15%_0%,hsl(0_0%_100%/.5),transparent_34%),radial-gradient(circle_at_88%_15%,hsl(0_0%_0%/.08),transparent_24%)]" />
 
       <div className="mx-auto max-w-6xl">
         <div className="mb-14 max-w-3xl">
