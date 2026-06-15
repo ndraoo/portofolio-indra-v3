@@ -5,25 +5,25 @@ const skillGroups = [
   {
     icon: Code2,
     title: "Frontend Craft",
-    description: "Building polished interfaces and user flows that stay practical in production.",
+    description: "Clean interfaces and user flows.",
     skills: ["React.js", "Vue.js", "JavaScript", "Tailwind CSS"],
   },
   {
     icon: Database,
     title: "Backend Systems",
-    description: "Designing APIs, business logic, and operational features that support product reliability.",
+    description: "APIs, business logic, and backend flow.",
     skills: ["Laravel", "PHP", "Go", "REST API"],
   },
   {
     icon: Smartphone,
     title: "Mobile Delivery",
-    description: "Connecting mobile product experiences with the same quality and consistency as the web stack.",
+    description: "Mobile features connected to the product stack.",
     skills: ["React Native", "Firebase", "Swagger", "Figma"],
   },
   {
     icon: Layers3,
     title: "Data and Workflow",
-    description: "Keeping delivery smooth with clear collaboration, stable data layers, and repeatable tooling.",
+    description: "Data, tooling, and team workflow.",
     skills: ["MySQL", "PostgreSQL", "Docker", "GitHub", "Bootstrap"],
   },
 ];
@@ -43,15 +43,15 @@ const Skills = () => {
           </Badge>
 
           <h2 className="mt-6 text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
-            The stack I use to ship real product work.
+            Main stack and workflow.
           </h2>
 
           <p className="mt-5 text-base leading-8 text-white/66 md:text-lg">
-            My day-to-day work moves between frontend polish, backend implementation, mobile delivery, and the systems that keep product teams shipping smoothly.
+            Tools I use for frontend, backend, mobile, and delivery.
           </p>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
-            {["User flows", "API integration", "Business logic", "Cross-team delivery"].map((item) => (
+            {["User flows", "API integration", "Business logic", "Team delivery"].map((item) => (
               <div
                 key={item}
                 className="rounded-[1.25rem] border border-white/10 bg-white/[0.05] px-4 py-4 text-sm font-medium text-white/72"

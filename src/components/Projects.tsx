@@ -19,36 +19,36 @@ const projects: Project[] = [
     period: "Sep 2025 - Present",
     association: "Associated with Putra Muda Mandiri",
     description:
-      "A superapp mobile application for Langit Initiatives and an interactive Islamic app for tracking your prayers journey.",
+      "Islamic superapp with Quran, prayer times, Hijri calendar, and Qiblah.",
     skills: ["Superapp", "Mushaf/Quran", "Prayer Times", "Hijri Calendar", "Qiblah"],
   },
   {
     title: "Brightschools",
-    description: "School management system with parent and teacher portals.",
+    description: "School management for parents and teachers.",
     skills: ["Go", "PostgreSQL", "Swagger", "Firebase"],
     playstore: "https://play.google.com/store/apps/details?id=id.brightschools.app&pcampaignid=web_share",
   },
   {
     title: "POS Restaurant",
-    description: "Restaurant management system with menu and order management.",
+    description: "Restaurant POS and order management.",
     skills: ["Go", "PostgreSQL", "Swagger"],
     link: "#",
   },
   {
     title: "Apotek Online",
-    description: "An online pharmacy platform for ordering and managing medications.",
+    description: "Online pharmacy platform.",
     skills: ["Laravel 9", "React", "MySQL", "Tailwind CSS"],
     link: "#",
   },
   {
     title: "Pelalangan Online",
-    description: "An online auction platform for buying and selling items.",
+    description: "Online auction platform.",
     skills: ["Laravel 9", "MySQL", "Bootstrap"],
     link: "#",
   },
   {
     title: "Mosque Financial Monitoring",
-    description: "A web application to monitor and manage mosque finances efficiently.",
+    description: "Mosque financial monitoring platform.",
     skills: ["Laravel 9", "MySQL", "Bootstrap"],
     link: "#",
   },
@@ -74,10 +74,10 @@ const Projects = () => {
             Selected Projects
           </Badge>
           <h2 className="mt-5 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-            Product work across operations, commerce, and education.
+            Selected projects.
           </h2>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            A selection of systems I have contributed to, spanning internal tools, business platforms, and mobile-connected products.
+            Mobile apps, internal tools, and business platforms.
           </p>
         </div>
 

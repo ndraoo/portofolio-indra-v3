@@ -3,26 +3,26 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, ArrowRight, Code2, Layers3, Workflow } from "lucide-react";
 
 const focusAreas = [
-  "Frontend, backend, and mobile delivery",
-  "Minimal interfaces with reliable systems",
-  "Cross-country engineering collaboration",
+  "Fullstack web and mobile",
+  "Clean UI and reliable APIs",
+  "Indonesia-Malaysia collaboration",
 ];
 
 const spotlightItems = [
   {
     icon: Layers3,
     title: "Fullstack ownership",
-    description: "From UI details to API behavior and database flow.",
+    description: "UI, API, and database flow.",
   },
   {
     icon: Code2,
     title: "Modern stack",
-    description: "Laravel, Vue.js, React.js, and React Native.",
+    description: "Laravel, Vue.js, React.js, React Native.",
   },
   {
     icon: Workflow,
     title: "Practical execution",
-    description: "Shipping work that is clean, collaborative, and production-minded.",
+    description: "Clean, maintainable, production-ready work.",
   },
 ];
 
@@ -46,11 +46,11 @@ const Hero = () => {
           </Badge>
 
           <h1 className="max-w-4xl text-5xl font-semibold leading-[0.92] tracking-tight text-foreground md:text-7xl">
-            Minimal product experiences with <span className="font-serif italic">solid</span> engineering underneath.
+            Fullstack software developer for web, backend, and mobile.
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
-            I&apos;m Indra Purnomo, a software developer focused on fullstack web and mobile work. I build interfaces that feel sharp, APIs that stay dependable, and product flows that make sense end to end.
+            Laravel, Vue.js, React.js, and React Native. Building clean UI, solid APIs, and reliable product flows.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -107,10 +107,10 @@ const Hero = () => {
             <div className="mt-8">
               <p className="text-sm uppercase tracking-[0.24em] text-white/50">Pinetop Technology Venture</p>
               <h2 className="mt-3 text-4xl font-semibold tracking-tight md:text-[2.7rem]">
-                Building TalentCloud.Ai with a clean fullstack mindset.
+                Building TalentCloud.Ai end to end.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-8 text-white/66">
-                Shipping product work across Laravel, Vue.js, React.js, and React Native with attention to UI detail, integration quality, and maintainable implementation.
+                Fullstack delivery across Laravel, Vue.js, React.js, and React Native.
               </p>
             </div>
 

@@ -34,11 +34,11 @@ const experiences: Experience[] = [
     location: "Hybrid - BSD, Indonesia",
     scope: "TalentCloud.Ai - Malaysia HQ collaboration",
     summary:
-      "Building TalentCloud.Ai with an end-to-end fullstack mindset across web and mobile experiences.",
+      "Fullstack delivery for TalentCloud.Ai across web and mobile.",
     highlights: [
-      "Developing and maintaining fullstack features using PHP Laravel on the backend, Vue.js and React.js on the frontend, and React Native for mobile delivery.",
-      "Implementing form management features from frontend UI and API integration through backend business logic and database operations.",
-      "Collaborating with engineering teams in Malaysia and Indonesia to deliver integrated solutions across multiple product surfaces.",
+      "Build features with Laravel, Vue.js, React.js, and React Native.",
+      "Handle forms from UI to API, business logic, and database.",
+      "Collaborate with engineering teams in Malaysia and Indonesia.",
     ],
     stack: ["PHP", "Laravel", "Vue.js", "React.js", "React Native"],
     featured: true,
@@ -51,12 +51,12 @@ const experiences: Experience[] = [
     location: "Kota Medan, North Sumatra, Indonesia - Remote",
     scope: "Part-time - POS platform and operational backend delivery",
     summary:
-      "Contributing part-time to business operations software with a focus on POS workflows, notifications, and internal backend features.",
+      "Part-time product and backend work for operational systems.",
     highlights: [
-      "Developed a POS system for restaurants with dynamic menu and order management features.",
-      "Developed backend APIs using Firebase Cloud Messaging to schedule and send push notifications based on user roles and topics.",
-      "Developed and maintained new features, including notifications, invoices, and attendance endpoints.",
-      "Contributed to backend system architecture, endpoint testing, and cross-functional delivery while following clean code and Git-based collaboration practices.",
+      "Built restaurant POS features.",
+      "Built FCM notification APIs by role and topic.",
+      "Maintained notifications, invoices, and attendance endpoints.",
+      "Supported architecture, testing, and Git workflow.",
     ],
     stack: ["POS System", "Firebase Cloud Messaging", "Notifications", "Git"],
     active: true,
@@ -69,11 +69,11 @@ const experiences: Experience[] = [
     location: "Indonesia",
     scope: "Backend feature development",
     summary:
-      "Supported backend feature delivery with a focus on secure account flows and reservation management.",
+      "Backend feature delivery for account and booking flows.",
     highlights: [
-      "Developed secure profile update and password change features with validation and encryption for stronger data protection.",
-      "Implemented soft delete functionality with Eloquent ORM, making data removal safer and reversible.",
-      "Built recurring booking and room amenity logic with optimized queries and flexible backend configuration.",
+      "Built secure profile and password update features.",
+      "Implemented soft delete with Eloquent ORM.",
+      "Built recurring booking and room amenity logic.",
     ],
     stack: ["Laravel", "PHP", "MySQL", "Eloquent ORM"],
   },
@@ -84,10 +84,10 @@ const experiences: Experience[] = [
     location: "Indonesia",
     scope: "Business web applications",
     summary:
-      "Contributed to internal business tools and monitoring systems built with Laravel.",
+      "Worked on Laravel-based internal business tools.",
     highlights: [
-      "Developed an inventory management website using Laravel 9.",
-      "Built a financial monitoring web application for mosque operations using Laravel 9.",
+      "Built an inventory management website with Laravel 9.",
+      "Built a mosque financial monitoring website with Laravel 9.",
     ],
     stack: ["Laravel 9", "PHP", "MySQL"],
   },
@@ -276,10 +276,10 @@ const WorkExperience = () => {
               Work Experience
             </Badge>
             <h2 className="mt-5 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-              Current roles up front, earlier work kept clean and easy to scan.
+              Current roles and key impact.
             </h2>
             <p className="mt-4 text-lg leading-8 text-muted-foreground">
-              The active work section now highlights both ongoing roles first, while earlier experience stays available as supporting history below.
+              Ongoing roles first. Earlier experience below.
             </p>
           </div>
 
@@ -308,7 +308,7 @@ const WorkExperience = () => {
             <div>
               <p className="text-xs uppercase tracking-[0.22em] text-foreground/48">Earlier Experience</p>
               <h3 className="mt-2 text-2xl font-semibold tracking-tight text-foreground">
-                Foundation work that shaped the way I build today.
+                Earlier experience.
               </h3>
             </div>
 

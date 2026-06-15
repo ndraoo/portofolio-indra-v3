@@ -14,10 +14,10 @@ const Contact = () => {
                 Let&apos;s Connect
               </p>
               <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
-                Open for collaboration on web, backend, and mobile product work.
+                Open for web, backend, and mobile work.
               </h2>
               <p className="mt-5 text-base leading-8 text-white/66 md:text-lg">
-                If you&apos;re building a product and need someone who can work across frontend, backend, and system flow, I&apos;d be glad to talk.
+                Available for collaboration and product development.
               </p>
             </div>
 

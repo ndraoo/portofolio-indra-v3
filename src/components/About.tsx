@@ -5,22 +5,22 @@ const valueCards = [
   {
     icon: Code2,
     title: "Product-minded development",
-    description: "I like turning requirements into production-ready features that feel clean, fast, and intuitive.",
+    description: "Turning requirements into production-ready features.",
   },
   {
     icon: Database,
     title: "Strong fullstack ownership",
-    description: "From frontend forms to API integration and backend data flow, I am comfortable handling the full delivery path.",
+    description: "From frontend flow to API and database.",
   },
   {
     icon: Smartphone,
     title: "Web and mobile delivery",
-    description: "I work across browser and mobile experiences so the product feels connected on every touchpoint.",
+    description: "Shipping connected experiences across web and mobile.",
   },
   {
     icon: Users,
     title: "Collaborative execution",
-    description: "I enjoy working with distributed teams, aligning technical decisions, and delivering practical solutions together.",
+    description: "Working closely with product and engineering teams.",
   },
 ];
 
@@ -37,18 +37,18 @@ const About = () => {
           </Badge>
 
           <h2 className="mt-6 max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
-            A software developer who likes product interfaces to feel calm, precise, and well-supported underneath.
+            Focused on shipping clean and reliable digital products.
           </h2>
 
           <div className="mt-6 space-y-5 text-base leading-8 text-white/68 md:text-lg">
             <p>
-              I focus on building dependable digital experiences across frontend, backend, and mobile. My work usually starts from understanding the product flow, then continues through interface implementation, API integration, business logic, and database operations.
+              I build frontend, backend, and mobile features from UI to business logic and database flow.
             </p>
             <p>
-              At Pinetop Technology Venture, I contribute to TalentCloud.Ai by developing fullstack features with Laravel, Vue.js, React.js, and React Native. In parallel, I continue part-time software engineering work at Putra Muda Mandiri, building operational features that support real day-to-day business usage.
+              Current focus: TalentCloud.Ai at Pinetop and product work at Putra Muda Mandiri.
             </p>
             <p>
-              I care about maintainable code, efficient collaboration, and software that feels refined in day-to-day use, not just functional on paper.
+              I care about clean code, maintainable systems, and smooth collaboration.
             </p>
           </div>
 
