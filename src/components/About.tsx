@@ -45,7 +45,7 @@ const About = () => {
               I focus on building dependable digital experiences across frontend, backend, and mobile. My work usually starts from understanding the product flow, then continues through interface implementation, API integration, business logic, and database operations.
             </p>
             <p>
-              At Pinetop Technology Venture, I contribute to TalentCloud.Ai by developing fullstack features with Laravel, Vue.js, React.js, and React Native. That mix lets me stay close to both user experience and system behavior, which is where I do my best work.
+              At Pinetop Technology Venture, I contribute to TalentCloud.Ai by developing fullstack features with Laravel, Vue.js, React.js, and React Native. In parallel, I continue part-time software engineering work at Putra Muda Mandiri, building operational features that support real day-to-day business usage.
             </p>
             <p>
               I care about maintainable code, efficient collaboration, and software that feels refined in day-to-day use, not just functional on paper.
