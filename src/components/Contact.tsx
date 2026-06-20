@@ -33,10 +33,10 @@ const Contact = () => {
                 <div>
                   <p className="text-[0.65rem] uppercase tracking-wider text-white/40">Email Address</p>
                   <a 
-                    href="mailto:ndrao.dev@gmail.com" 
+                    href="mailto:indraprnm104@gmail.com" 
                     className="text-sm font-bold text-white hover:text-violet-300 transition-colors"
                   >
-                    ndrao.dev@gmail.com
+                    indraprnm104@gmail.com
                   </a>
                 </div>
               </div>
