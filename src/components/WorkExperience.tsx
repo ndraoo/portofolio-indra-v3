@@ -10,6 +10,7 @@ import {
   Globe2,
   MapPin,
   Sparkles,
+  Award,
 } from "lucide-react";
 
 interface Experience {
@@ -34,13 +35,13 @@ const experiences: Experience[] = [
     location: "Hybrid - BSD, Indonesia",
     scope: "TalentCloud.Ai - Malaysia HQ collaboration",
     summary:
-      "Fullstack delivery for TalentCloud.Ai across web and mobile.",
+      "Delivering core end-to-end user flows, profile systems, and cross-border API endpoints.",
     highlights: [
-      "Build features with Laravel, Vue.js, React.js, and React Native.",
-      "Handle forms from UI to API, business logic, and database.",
-      "Collaborate with engineering teams in Malaysia and Indonesia.",
+      "Ship clean, robust features across Vue.js frontends and Laravel backends.",
+      "Own full lifecycle feature delivery from data models to client UI layouts.",
+      "Collaborate directly with product stakeholders in Malaysia and developers in Medan/BSD.",
     ],
-    stack: ["PHP", "Laravel", "Vue.js", "React.js", "React Native"],
+    stack: ["Laravel", "PHP", "Vue.js", "React Native", "PostgreSQL"],
     featured: true,
     active: true,
   },
@@ -48,17 +49,16 @@ const experiences: Experience[] = [
     title: "Software Engineer",
     company: "Putra Muda Mandiri",
     period: "Apr 2025 - Present",
-    location: "Kota Medan, North Sumatra, Indonesia - Remote",
-    scope: "Part-time - POS platform and operational backend delivery",
+    location: "Medan, North Sumatra, Indonesia - Remote",
+    scope: "POS & Operational backend platform",
     summary:
-      "Part-time product and backend work for operational systems.",
+      "Supporting operational backend development and push notification infrastructures.",
     highlights: [
-      "Built restaurant POS features.",
-      "Built FCM notification APIs by role and topic.",
-      "Maintained notifications, invoices, and attendance endpoints.",
-      "Supported architecture, testing, and Git workflow.",
+      "Implemented a scalable push notification system via Firebase Cloud Messaging.",
+      "Built restaurant POS endpoints, invoice generators, and logs tracking APIs.",
+      "Structured unit tests and Git merge workflows for stable releases.",
     ],
-    stack: ["POS System", "Firebase Cloud Messaging", "Notifications", "Git"],
+    stack: ["POS System", "Firebase", "Go", "Git", "REST APIs"],
     active: true,
     employmentType: "Part-time",
   },
@@ -66,14 +66,14 @@ const experiences: Experience[] = [
     title: "Backend Developer Intern",
     company: "Core Initiative",
     period: "Oct 2024 - Oct 2024",
-    location: "Indonesia",
-    scope: "Backend feature development",
+    location: "Jakarta, Indonesia - Remote",
+    scope: "Booking & User management logic",
     summary:
-      "Backend feature delivery for account and booking flows.",
+      "Implemented critical backend update flows and data management patterns.",
     highlights: [
-      "Built secure profile and password update features.",
-      "Implemented soft delete with Eloquent ORM.",
-      "Built recurring booking and room amenity logic.",
+      "Secured user profile and password changes with robust verification policies.",
+      "Built soft-delete architectures using Laravel Eloquent scopes.",
+      "Configured booking schedule intervals and amenity checklists.",
     ],
     stack: ["Laravel", "PHP", "MySQL", "Eloquent ORM"],
   },
@@ -81,15 +81,15 @@ const experiences: Experience[] = [
     title: "Web Development Intern",
     company: "PT Dewan Studio",
     period: "Feb 2023 - Mar 2023",
-    location: "Indonesia",
-    scope: "Business web applications",
+    location: "Jakarta, Indonesia - Remote",
+    scope: "Business tools prototyping",
     summary:
-      "Worked on Laravel-based internal business tools.",
+      "Created initial prototypes for inventory tracking and administrative monitoring.",
     highlights: [
-      "Built an inventory management website with Laravel 9.",
-      "Built a mosque financial monitoring website with Laravel 9.",
+      "Prototyped a robust inventory tracking portal for client deployments.",
+      "Created mosque balance monitoring web dashboards using Laravel.",
     ],
-    stack: ["Laravel 9", "PHP", "MySQL"],
+    stack: ["Laravel 9", "PHP", "MySQL", "Bootstrap"],
   },
 ];
 
@@ -102,133 +102,152 @@ const ExperienceCard = ({ exp, index }: { exp: Experience; index: number }) => {
   return (
     <article
       className={cn(
-        "h-full rounded-[2.2rem] p-7 animate-fade-in md:p-8",
+        "h-full rounded-[2.5rem] p-7 md:p-8 hover-lift border transition-all duration-300 relative overflow-hidden flex flex-col justify-between",
         dark
-          ? "panel-3d-dark stack-offset-dark text-white"
-          : "panel-3d stack-offset text-foreground"
+          ? "glass-card-dark text-white shadow-2xl"
+          : "glass-card border-border/40 text-foreground"
       )}
       style={{ animationDelay: `${index * 0.1}s` }}
     >
-      <div className="flex flex-wrap gap-2">
-        {dark ? (
-          <Badge className="chip-3d-dark rounded-full px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.2em] text-white/72">
-            Primary Role
-          </Badge>
-        ) : (
-          <Badge
-            variant="outline"
-            className="chip-3d rounded-full px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.2em] text-foreground"
-          >
-            Active Role
-          </Badge>
-        )}
+      {dark && (
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      )}
 
-        {exp.employmentType && (
+      <div>
+        <div className="flex flex-wrap gap-2 items-center justify-between">
           <Badge
             variant="outline"
             className={cn(
-              "rounded-full px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.2em]",
+              "rounded-full px-3 py-1 text-[0.7rem] uppercase tracking-wider font-semibold",
               dark
-                ? "border-white/12 bg-white/[0.05] text-white/68"
-                : "chip-3d text-foreground/72"
+                ? "bg-white/10 text-white/95 border-white/10"
+                : "bg-primary/5 text-primary border-primary/20"
             )}
           >
-            {exp.employmentType}
+            {dark ? "Primary Role" : "Active Role"}
           </Badge>
-        )}
-      </div>
 
-      <div className="mt-7 flex items-start gap-4">
-        <div
-          className={cn(
-            "rounded-2xl p-3",
-            dark ? "border border-white/10 bg-white/[0.06]" : "border border-black/8 bg-black/5"
+          {exp.employmentType && (
+            <Badge
+              variant="outline"
+              className={cn(
+                "rounded-full px-3 py-1 text-[0.7rem] uppercase tracking-wider font-semibold",
+                dark
+                  ? "bg-white/5 text-white/70 border-white/10"
+                  : "bg-muted text-muted-foreground border-border"
+              )}
+            >
+              {exp.employmentType}
+            </Badge>
           )}
-        >
-          <Briefcase className="h-5 w-5" />
         </div>
 
-        <div>
-          <h3 className={cn("text-2xl font-semibold tracking-tight", dark ? "text-white" : "text-foreground")}>
-            {exp.title}
-          </h3>
-          <p className={cn("mt-2 text-base font-medium", dark ? "text-white/72" : "text-foreground/80")}>
-            {exp.company}
+        <div className="mt-6 flex items-start gap-4">
+          <div
+            className={cn(
+              "rounded-2xl p-3.5",
+              dark
+                ? "bg-white/5 border border-white/10 text-white"
+                : "bg-primary/5 border border-primary/10 text-primary"
+            )}
+          >
+            <Briefcase className="h-5 w-5" />
+          </div>
+
+          <div>
+            <h3 className="text-xl font-bold tracking-tight leading-tight">
+              {exp.title}
+            </h3>
+            <p className={cn("mt-1.5 text-sm font-medium", dark ? "text-white/80" : "text-primary")}>
+              {exp.company}
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-5 flex flex-wrap gap-2 text-xs">
+          <span
+            className={cn(
+              "rounded-full px-3 py-1.5 border font-medium",
+              dark
+                ? "bg-white/5 border-white/10 text-white/80"
+                : "bg-muted border-border text-muted-foreground"
+            )}
+          >
+            {exp.period}
+          </span>
+          <span
+            className={cn(
+              "rounded-full px-3 py-1.5 border font-medium",
+              dark
+                ? "bg-white/5 border-white/10 text-white/80"
+                : "bg-muted border-border text-muted-foreground"
+            )}
+          >
+            {exp.location}
+          </span>
+        </div>
+
+        <div
+          className={cn(
+            "mt-6 rounded-2xl border p-5",
+            dark ? "bg-white/[0.02] border-white/5" : "bg-black/[0.015] border-black/5"
+          )}
+        >
+          <div
+            className={cn(
+              "flex items-center gap-1.5 text-[0.7rem] uppercase tracking-[0.22em] font-semibold",
+              dark ? "text-white/40" : "text-muted-foreground"
+            )}
+          >
+            <Sparkles className="h-3.5 w-3.5" />
+            Impact Summary
+          </div>
+          <p className={cn("mt-2 text-sm leading-relaxed", dark ? "text-white/70" : "text-muted-foreground")}>
+            {exp.summary}
           </p>
         </div>
+
+        <ul className="mt-5 space-y-2.5">
+          {exp.highlights.map((item) => (
+            <li
+              key={item}
+              className={cn(
+                "flex items-start gap-3 rounded-xl border p-3.5",
+                dark ? "bg-white/[0.01] border-white/5" : "bg-white/40 border-border/30"
+              )}
+            >
+              <CheckCircle2
+                className={cn("mt-0.5 h-4.5 w-4.5 flex-shrink-0", dark ? "text-violet-400" : "text-primary")}
+              />
+              <span className={cn("text-xs leading-relaxed", dark ? "text-white/70" : "text-foreground/80")}>
+                {item}
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
 
-      <div className="mt-6 flex flex-wrap gap-3 text-sm">
-        <div
-          className={cn(
-            "rounded-full px-4 py-2",
-            dark ? "border border-white/10 bg-white/[0.05] text-white/68" : "chip-3d text-foreground/72"
-          )}
-        >
-          {exp.period}
-        </div>
-        <div
-          className={cn(
-            "rounded-full px-4 py-2",
-            dark ? "border border-white/10 bg-white/[0.05] text-white/68" : "chip-3d text-foreground/72"
-          )}
-        >
-          {exp.location}
-        </div>
-      </div>
-
-      <div
-        className={cn(
-          "mt-7 rounded-[1.7rem] border p-5",
-          dark ? "border-white/10 bg-white/[0.05]" : "border-black/8 bg-black/[0.025]"
-        )}
-      >
-        <div className={cn("flex items-center gap-2 text-sm uppercase tracking-[0.22em]", dark ? "text-white/46" : "text-foreground/52")}>
-          <Sparkles className="h-4 w-4" />
-          Impact Snapshot
-        </div>
-        <p className={cn("mt-3 text-base leading-8", dark ? "text-white/68" : "text-muted-foreground")}>
-          {exp.summary}
-        </p>
-      </div>
-
-      <ul className="mt-6 grid gap-3">
-        {exp.highlights.map((item) => (
-          <li
-            key={item}
-            className={cn(
-              "flex items-start gap-3 rounded-[1.4rem] border p-4",
-              dark ? "border-white/10 bg-white/[0.04]" : "border-black/8 bg-white/70"
-            )}
-          >
-            <CheckCircle2 className={cn("mt-0.5 h-5 w-5 flex-shrink-0", dark ? "text-white" : "text-foreground")} />
-            <span className={cn("text-sm leading-7 md:text-[0.95rem]", dark ? "text-white/72" : "text-foreground/80")}>
+      <div className="mt-6 pt-5 border-t border-border/10">
+        <div className="flex flex-wrap gap-1.5 mb-4">
+          {exp.stack.map((item) => (
+            <span
+              key={item}
+              className={cn(
+                "rounded-full px-2.5 py-1 text-[0.7rem] font-semibold",
+                dark
+                  ? "bg-white/5 border border-white/10 text-white/80"
+                  : "bg-muted border border-border/40 text-foreground/80"
+              )}
+            >
               {item}
             </span>
-          </li>
-        ))}
-      </ul>
+          ))}
+        </div>
 
-      <div className="mt-6 flex flex-wrap gap-2">
-        {exp.stack.map((item) => (
-          <span
-            key={item}
-            className={cn(
-              "rounded-full px-3 py-1.5 text-sm font-medium",
-              dark ? "border border-white/12 bg-white/[0.05] text-white/72" : "chip-3d text-foreground/74"
-            )}
-          >
-            {item}
-          </span>
-        ))}
-      </div>
-
-      <div className={cn("mt-6 flex items-center gap-2 text-sm", dark ? "text-white/46" : "text-muted-foreground")}>
-        <MapPin className="h-4 w-4" />
-        <span>{exp.location}</span>
-        <span className="opacity-50">/</span>
-        <Globe2 className="h-4 w-4" />
-        <span>{exp.scope}</span>
+        <div className={cn("flex items-center gap-1.5 text-xs", dark ? "text-white/40" : "text-muted-foreground")}>
+          <Globe2 className="h-3.5 w-3.5" />
+          <span>{exp.scope}</span>
+        </div>
       </div>
     </article>
   );
@@ -236,20 +255,27 @@ const ExperienceCard = ({ exp, index }: { exp: Experience; index: number }) => {
 
 const PreviousExperienceCard = ({ exp, index }: { exp: Experience; index: number }) => (
   <article
-    className="panel-3d rounded-[1.9rem] p-6 animate-fade-in md:p-7"
+    className="glass-card rounded-2xl p-6 border-border/40 hover-lift animate-fade-in"
     style={{ animationDelay: `${index * 0.08}s` }}
   >
-    <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+    <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
       <div className="max-w-2xl">
-        <p className="text-xs uppercase tracking-[0.22em] text-foreground/48">{exp.period}</p>
-        <h3 className="mt-3 text-2xl font-semibold tracking-tight text-foreground">{exp.title}</h3>
-        <p className="mt-2 text-base font-medium text-foreground/78">{exp.company}</p>
-        <p className="mt-4 text-sm leading-7 text-muted-foreground md:text-base">{exp.summary}</p>
+        <span className="text-[0.7rem] uppercase tracking-wider font-semibold text-primary">
+          {exp.period}
+        </span>
+        <h3 className="mt-2 text-xl font-bold tracking-tight text-foreground">
+          {exp.title}
+        </h3>
+        <p className="text-xs font-semibold text-muted-foreground">{exp.company} — {exp.location}</p>
+        <p className="mt-3 text-xs leading-relaxed text-muted-foreground">{exp.summary}</p>
       </div>
 
-      <div className="flex flex-wrap gap-2 lg:max-w-sm lg:justify-end">
+      <div className="flex flex-wrap gap-1 lg:max-w-sm lg:justify-end">
         {exp.stack.map((item) => (
-          <span key={item} className="chip-3d rounded-full px-3 py-1.5 text-sm font-medium text-foreground/74">
+          <span
+            key={item}
+            className="rounded-full bg-muted border border-border/40 px-2.5 py-1 text-[0.7rem] font-semibold text-foreground/80"
+          >
             {item}
           </span>
         ))}
@@ -262,52 +288,51 @@ const WorkExperience = () => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <section id="experience" className="relative overflow-hidden px-6 py-24">
-      <div className="absolute left-[10%] top-20 -z-10 h-52 w-52 rounded-full bg-black/6 blur-3xl" />
-      <div className="absolute right-[8%] top-32 -z-10 h-40 w-40 rounded-[2rem] border border-black/6 bg-white/45 blur-2xl" />
-
+    <section id="experience" className="relative px-6 py-28 overflow-hidden">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-14 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+        <div className="mb-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
           <div className="max-w-3xl">
             <Badge
               variant="outline"
-              className="chip-3d rounded-full px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.24em] text-foreground"
+              className="interactive-badge mb-4 rounded-full px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.24em] font-semibold text-foreground/80"
             >
+              <Award className="h-3 w-3 mr-1.5 text-primary" />
               Work Experience
             </Badge>
-            <h2 className="mt-5 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-              Current roles and key impact.
+            <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
+              Professional <span className="gradient-text">journey</span>.
             </h2>
-            <p className="mt-4 text-lg leading-8 text-muted-foreground">
-              Ongoing roles first. Earlier experience below.
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground font-normal">
+              Active fullstack and mobile delivery. Click below to see earlier history.
             </p>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-3">
             {[
-              { value: "2", label: "current roles" },
-              { value: "Fullstack", label: "delivery focus" },
-              { value: "Indonesia + Malaysia", label: "team footprint" },
+              { value: "2 Active", label: "Roles Shipped" },
+              { value: "Fullstack", label: "Core Delivery" },
+              { value: "Medan - BSD", label: "Footprint" },
             ].map((item) => (
-              <div key={item.label} className="panel-3d rounded-[1.6rem] p-4">
-                <p className="text-xs uppercase tracking-[0.22em] text-foreground/48">{item.label}</p>
-                <p className="mt-3 text-lg font-semibold text-foreground">{item.value}</p>
+              <div key={item.label} className="glass-card rounded-2xl p-4 text-center border-border/40">
+                <p className="text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">{item.label}</p>
+                <p className="mt-2 text-sm font-bold text-foreground">{item.value}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {currentExperiences.map((exp, index) => (
             <ExperienceCard key={`${exp.company}-${exp.title}`} exp={exp} index={index} />
           ))}
         </div>
 
+        {/* Older Roles */}
         <div className="mt-16">
-          <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-t border-border/40 pt-10">
             <div>
-              <p className="text-xs uppercase tracking-[0.22em] text-foreground/48">Earlier Experience</p>
-              <h3 className="mt-2 text-2xl font-semibold tracking-tight text-foreground">
+              <p className="text-[0.7rem] uppercase tracking-wider font-semibold text-muted-foreground">Historical Roles</p>
+              <h3 className="mt-1 text-2xl font-bold tracking-tight text-foreground">
                 Earlier experience.
               </h3>
             </div>
@@ -315,7 +340,7 @@ const WorkExperience = () => {
             <Button
               variant="outline"
               onClick={() => setExpanded(!expanded)}
-              className="chip-3d rounded-full px-6 text-foreground"
+              className="glass-card rounded-full px-6 text-foreground font-medium border-border/80"
             >
               {expanded ? (
                 <>
@@ -323,14 +348,14 @@ const WorkExperience = () => {
                 </>
               ) : (
                 <>
-                  View Earlier Experience <ChevronDown className="ml-2 h-4 w-4" />
+                  View Earlier History <ChevronDown className="ml-2 h-4 w-4" />
                 </>
               )}
             </Button>
           </div>
 
           {expanded && (
-            <div className="grid gap-4">
+            <div className="grid gap-4 mt-6">
               {previousExperiences.map((exp, index) => (
                 <PreviousExperienceCard key={`${exp.company}-${exp.title}`} exp={exp} index={index} />
               ))}

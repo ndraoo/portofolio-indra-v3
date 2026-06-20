@@ -1,60 +1,67 @@
 import { Badge } from "@/components/ui/badge";
-import { Code2, Database, Layers3, Smartphone } from "lucide-react";
+import { Code2, Database, Layers3, Smartphone, Laptop } from "lucide-react";
 
 const skillGroups = [
   {
     icon: Code2,
     title: "Frontend Craft",
-    description: "Clean interfaces and user flows.",
-    skills: ["React.js", "Vue.js", "JavaScript", "Tailwind CSS"],
+    description: "Developing responsive client views and user interfaces.",
+    skills: ["React.js", "Vue.js", "JavaScript", "Tailwind CSS", "Bootstrap"],
   },
   {
     icon: Database,
     title: "Backend Systems",
-    description: "APIs, business logic, and backend flow.",
-    skills: ["Laravel", "PHP", "Go", "REST API"],
+    description: "Structuring APIs, databases, and core business flows.",
+    skills: ["Laravel", "PHP", "Go", "REST APIs", "Eloquent ORM"],
   },
   {
     icon: Smartphone,
     title: "Mobile Delivery",
-    description: "Mobile features connected to the product stack.",
-    skills: ["React Native", "Firebase", "Swagger", "Figma"],
+    description: "Shipping mobile features tied to core services.",
+    skills: ["React Native", "Firebase", "FCM notifications"],
   },
   {
     icon: Layers3,
-    title: "Data and Workflow",
-    description: "Data, tooling, and team workflow.",
-    skills: ["MySQL", "PostgreSQL", "Docker", "GitHub", "Bootstrap"],
+    title: "Tooling & Database",
+    description: "Managing schemas, workflows, and developer tools.",
+    skills: ["MySQL", "PostgreSQL", "Docker", "Git", "Swagger", "Figma"],
   },
 ];
 
 const Skills = () => {
   return (
-    <section className="relative overflow-hidden px-6 py-24">
-      <div className="absolute inset-x-0 top-0 -z-10 h-72 bg-[radial-gradient(circle_at_80%_0%,hsl(0_0%_0%/.08),transparent_28%),radial-gradient(circle_at_12%_20%,hsl(0_0%_100%/.45),transparent_36%)]" />
-
-      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="panel-3d-dark stack-offset-dark rounded-[2.25rem] p-8 text-white xl:p-10">
+    <section id="skills" className="relative px-6 py-28 overflow-hidden">
+      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.95fr_1.05fr] items-center">
+        {/* Left Column (Main Heading) */}
+        <div className="glass-card-dark rounded-[2.5rem] p-8 text-white md:p-10 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+          
           <Badge
             variant="outline"
-            className="chip-3d-dark rounded-full px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.24em] text-white/72"
+            className="rounded-full bg-white/10 px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.24em] font-semibold text-white/90 border border-white/10"
           >
-            Skills and Technologies
+            <Laptop className="h-3 w-3 mr-1.5 text-violet-400" />
+            Skills & Stack
           </Badge>
 
-          <h2 className="mt-6 text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
-            Main stack and workflow.
+          <h2 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl">
+            My technology <span className="bg-gradient-to-r from-violet-400 to-indigo-300 bg-clip-text text-transparent">toolbox</span>.
           </h2>
 
-          <p className="mt-5 text-base leading-8 text-white/66 md:text-lg">
-            Tools I use for frontend, backend, mobile, and delivery.
+          <p className="mt-5 text-sm leading-relaxed text-white/70 md:text-base">
+            I work across frontend views, backend data stores, and client devices to deliver cohesive user flows.
           </p>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
-            {["User flows", "API integration", "Business logic", "Team delivery"].map((item) => (
+            {[
+              "Modular Component Flow",
+              "Relational Database Design",
+              "REST API Integration",
+              "Git Deployment Flow",
+            ].map((item) => (
               <div
                 key={item}
-                className="rounded-[1.25rem] border border-white/10 bg-white/[0.05] px-4 py-4 text-sm font-medium text-white/72"
+                className="rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3.5 text-xs font-semibold text-white/80"
               >
                 {item}
               </div>
@@ -62,24 +69,27 @@ const Skills = () => {
           </div>
         </div>
 
+        {/* Right Column (Skills Grid) */}
         <div className="grid gap-4 sm:grid-cols-2">
           {skillGroups.map(({ icon: Icon, title, description, skills }) => (
             <article
               key={title}
-              className="panel-3d rounded-[1.85rem] p-6 transition-all duration-300 hover:-translate-y-1"
+              className="glass-card hover-lift rounded-2xl p-5 border-border/40 flex flex-col justify-between"
             >
-              <div className="inline-flex rounded-2xl border border-black/8 bg-black/5 p-3 text-foreground">
-                <Icon className="h-5 w-5" />
+              <div>
+                <div className="inline-flex rounded-xl bg-primary/10 p-3 text-primary">
+                  <Icon className="h-5 w-5" />
+                </div>
+
+                <h3 className="mt-4 text-base font-bold text-foreground">{title}</h3>
+                <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{description}</p>
               </div>
 
-              <h3 className="mt-5 text-xl font-semibold text-foreground">{title}</h3>
-              <p className="mt-3 text-sm leading-7 text-muted-foreground md:text-base">{description}</p>
-
-              <div className="mt-5 flex flex-wrap gap-2">
+              <div className="mt-5 flex flex-wrap gap-1.5">
                 {skills.map((skill) => (
                   <span
                     key={skill}
-                    className="chip-3d rounded-full px-3 py-1.5 text-sm font-medium text-foreground/75"
+                    className="rounded-full bg-muted border border-border/30 px-2.5 py-1 text-[0.7rem] font-semibold text-foreground/80 hover:border-primary/40 hover:text-primary transition-colors cursor-default"
                   >
                     {skill}
                   </span>

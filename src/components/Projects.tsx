@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, ChevronDown, ChevronUp, Layers3 } from "lucide-react";
+import { ArrowUpRight, ChevronDown, ChevronUp, Layers3, FolderGit2 } from "lucide-react";
 
 interface Project {
   title: string;
@@ -19,36 +19,36 @@ const projects: Project[] = [
     period: "Sep 2025 - Present",
     association: "Associated with Putra Muda Mandiri",
     description:
-      "Islamic superapp with Quran, prayer times, Hijri calendar, and Qiblah.",
-    skills: ["Superapp", "Mushaf/Quran", "Prayer Times", "Hijri Calendar", "Qiblah"],
+      "A comprehensive Islamic super-app containing Al-Quran digital, prayer schedules, Hijri calendars, and animated Qiblah compass indicators.",
+    skills: ["Mushaf/Quran", "Prayer Times", "Hijri Calendar", "Qiblah Compass", "React Native"],
   },
   {
     title: "Brightschools",
-    description: "School management for parents and teachers.",
-    skills: ["Go", "PostgreSQL", "Swagger", "Firebase"],
+    description: "Multi-role school administrative database and communication portal for parents and teachers.",
+    skills: ["Go", "PostgreSQL", "Swagger", "Firebase Notifications"],
     playstore: "https://play.google.com/store/apps/details?id=id.brightschools.app&pcampaignid=web_share",
   },
   {
     title: "POS Restaurant",
-    description: "Restaurant POS and order management.",
-    skills: ["Go", "PostgreSQL", "Swagger"],
+    description: "High-concurrency point-of-sale inventory and transaction dashboard for restaurants.",
+    skills: ["Go", "PostgreSQL", "Swagger API"],
     link: "#",
   },
   {
     title: "Apotek Online",
-    description: "Online pharmacy platform.",
-    skills: ["Laravel 9", "React", "MySQL", "Tailwind CSS"],
+    description: "Online medicine inventory and sales portal containing authentication and reports.",
+    skills: ["Laravel 9", "React.js", "MySQL", "Tailwind CSS"],
     link: "#",
   },
   {
-    title: "Pelalangan Online",
-    description: "Online auction platform.",
+    title: "Pelelangan Online",
+    description: "Online bid auction application featuring real-time state changes and status logs.",
     skills: ["Laravel 9", "MySQL", "Bootstrap"],
     link: "#",
   },
   {
     title: "Mosque Financial Monitoring",
-    description: "Mosque financial monitoring platform.",
+    description: "Administrative balance sheet tracker and audit reporter designed for local communities.",
     skills: ["Laravel 9", "MySQL", "Bootstrap"],
     link: "#",
   },
@@ -62,92 +62,101 @@ const Projects = () => {
   const hasFeaturedLink = Boolean(featuredUrl && featuredUrl !== "#");
 
   return (
-    <section id="projects" className="relative overflow-hidden px-6 py-24">
-      <div className="absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(circle_at_15%_0%,hsl(0_0%_100%/.5),transparent_34%),radial-gradient(circle_at_88%_15%,hsl(0_0%_0%/.08),transparent_24%)]" />
-
+    <section id="projects" className="relative px-6 py-28 overflow-hidden">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-14 max-w-3xl">
+        <div className="mb-12 max-w-3xl">
           <Badge
             variant="outline"
-            className="chip-3d rounded-full px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.24em] text-foreground"
+            className="interactive-badge mb-4 rounded-full px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.24em] font-semibold text-foreground/80"
           >
+            <FolderGit2 className="h-3 w-3 mr-1.5 text-primary" />
             Selected Projects
           </Badge>
-          <h2 className="mt-5 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-            Selected projects.
+          <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
+            Selected <span className="gradient-text">projects</span>.
           </h2>
-          <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            Mobile apps, internal tools, and business platforms.
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground font-normal">
+            Mobile applications, backend APIs, and multi-tenant administrative systems.
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <article className="panel-3d-dark stack-offset-dark rounded-[2.2rem] p-8 text-white">
-            <div className="flex flex-wrap items-center gap-3">
-              <Badge className="chip-3d-dark rounded-full px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.2em] text-white/72">
-                Featured Project
-              </Badge>
-              <Badge
-                variant="outline"
-                className="rounded-full border border-white/12 bg-white/[0.05] px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.2em] text-white/68"
-              >
-                Live product
-              </Badge>
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] items-stretch">
+          {/* Featured Project */}
+          <article className="glass-card-dark rounded-[2.5rem] p-8 text-white shadow-2xl relative overflow-hidden flex flex-col justify-between">
+            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+            
+            <div>
+              <div className="flex flex-wrap items-center gap-2.5">
+                <Badge className="rounded-full bg-white/10 px-3.5 py-1 text-[0.7rem] uppercase tracking-wider font-semibold text-white border border-white/15">
+                  Featured Product
+                </Badge>
+                <Badge
+                  variant="outline"
+                  className="rounded-full border border-white/10 bg-white/5 px-3.5 py-1 text-[0.7rem] uppercase tracking-wider font-semibold text-white/70"
+                >
+                  Live Production
+                </Badge>
+              </div>
+
+              <div className="mt-8">
+                {(featuredProject.period || featuredProject.association) && (
+                  <div className="mb-4 flex flex-wrap gap-2 text-xs">
+                    {featuredProject.period && (
+                      <span className="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-white/60">
+                        {featuredProject.period}
+                      </span>
+                    )}
+                    {featuredProject.association && (
+                      <span className="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-white/60">
+                        {featuredProject.association}
+                      </span>
+                    )}
+                  </div>
+                )}
+                <h3 className="text-3xl font-extrabold tracking-tight text-white leading-tight">
+                  {featuredProject.title}
+                </h3>
+                <p className="mt-4 text-sm leading-relaxed text-white/70">
+                  {featuredProject.description}
+                </p>
+              </div>
             </div>
 
-            <div className="mt-6 max-w-2xl">
-              {(featuredProject.period || featuredProject.association) && (
-                <div className="mb-4 flex flex-wrap gap-2">
-                  {featuredProject.period && (
-                    <span className="rounded-full border border-white/12 bg-white/[0.05] px-3 py-1.5 text-sm text-white/68">
-                      {featuredProject.period}
+            <div className="mt-8 pt-6 border-t border-white/10">
+              <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-5">
+                <div className="flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.2em] font-semibold text-white/40">
+                  <Layers3 className="h-4 w-4 text-white/60" />
+                  Stack Snapshots
+                </div>
+
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {featuredProject.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-full bg-white/5 border border-white/10 px-2.5 py-1 text-[0.7rem] font-semibold text-white/80"
+                    >
+                      {skill}
                     </span>
-                  )}
-                  {featuredProject.association && (
-                    <span className="rounded-full border border-white/12 bg-white/[0.05] px-3 py-1.5 text-sm text-white/68">
-                      {featuredProject.association}
-                    </span>
-                  )}
+                  ))}
+                </div>
+              </div>
+
+              {hasFeaturedLink && (
+                <div className="mt-6">
+                  <Button
+                    onClick={() => window.open(featuredUrl, "_blank")}
+                    className="rounded-full px-6 bg-white text-black hover:bg-white/90 font-semibold shadow-md flex items-center gap-1.5 transition-all hover:scale-[1.02]"
+                  >
+                    Open Live Project
+                    <ArrowUpRight className="h-4 w-4" />
+                  </Button>
                 </div>
               )}
-              <h3 className="text-3xl font-semibold tracking-tight text-white">{featuredProject.title}</h3>
-              <p className="mt-4 text-base leading-8 text-white/66 md:text-lg">
-                {featuredProject.description}
-              </p>
             </div>
-
-            <div className="mt-8 rounded-[1.5rem] border border-white/10 bg-white/[0.05] p-5">
-              <div className="flex items-center gap-2 text-sm font-medium uppercase tracking-[0.2em] text-white/48">
-                <Layers3 className="h-4 w-4 text-white" />
-                Stack Snapshot
-              </div>
-
-              <div className="mt-4 flex flex-wrap gap-2">
-                {featuredProject.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full border border-white/12 bg-white/[0.05] px-3 py-1.5 text-sm font-medium text-white/72"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {hasFeaturedLink && (
-              <div className="mt-8">
-                <Button
-                  onClick={() => window.open(featuredUrl, "_blank")}
-                  className="group chip-3d rounded-full px-6 text-foreground transition-all hover:-translate-y-0.5"
-                >
-                  Open Project
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </Button>
-              </div>
-            )}
           </article>
 
-          <div className="grid gap-4">
+          {/* Other Projects Grid */}
+          <div className="flex flex-col gap-4">
             {displayedProjects.map((project) => {
               const actionUrl = project.playstore || project.link;
               const hasLink = Boolean(actionUrl && actionUrl !== "#");
@@ -155,47 +164,44 @@ const Projects = () => {
               return (
                 <article
                   key={project.title}
-                  className="panel-3d rounded-[1.85rem] p-6 transition-all duration-300 hover:-translate-y-1"
+                  className="glass-card rounded-2xl p-5 border-border/40 hover-lift flex flex-col justify-between h-full"
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      {(project.period || project.association) && (
-                        <div className="mb-3 flex flex-wrap gap-2">
-                          {project.period && (
-                            <span className="chip-3d rounded-full px-3 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-foreground/72">
-                              {project.period}
-                            </span>
-                          )}
-                          {project.association && (
-                            <span className="chip-3d rounded-full px-3 py-1.5 text-xs font-medium uppercase tracking-[0.12em] text-foreground/72">
-                              {project.association}
-                            </span>
-                          )}
-                        </div>
-                      )}
-                      <h3 className="text-2xl font-semibold tracking-tight text-foreground">{project.title}</h3>
-                      <p className="mt-3 text-sm leading-7 text-muted-foreground md:text-base">
-                        {project.description}
-                      </p>
-                    </div>
+                  <div>
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        {(project.period || project.association) && (
+                          <div className="mb-2 flex flex-wrap gap-2 text-xs">
+                            {project.period && (
+                              <span className="rounded-full bg-muted border border-border/40 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-foreground/80">
+                                {project.period}
+                              </span>
+                            )}
+                          </div>
+                        )}
+                        <h3 className="text-lg font-bold tracking-tight text-foreground">{project.title}</h3>
+                        <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                          {project.description}
+                        </p>
+                      </div>
 
-                    {hasLink && (
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="chip-3d rounded-full"
-                        onClick={() => window.open(actionUrl, "_blank")}
-                      >
-                        <ArrowUpRight className="h-4 w-4" />
-                      </Button>
-                    )}
+                      {hasLink && (
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          className="rounded-full flex-shrink-0 hover:bg-primary/5 hover:text-primary border-border/80"
+                          onClick={() => window.open(actionUrl, "_blank")}
+                        >
+                          <ArrowUpRight className="h-4 w-4" />
+                        </Button>
+                      )}
+                    </div>
                   </div>
 
-                  <div className="mt-5 flex flex-wrap gap-2">
+                  <div className="mt-5 flex flex-wrap gap-1.5 pt-4 border-t border-border/30">
                     {project.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="chip-3d rounded-full px-3 py-1.5 text-sm font-medium text-foreground/75"
+                        className="rounded-full bg-muted border border-border/20 px-2.5 py-1 text-[0.65rem] font-semibold text-foreground/75"
                       >
                         {skill}
                       </span>
@@ -212,7 +218,7 @@ const Projects = () => {
             <Button
               variant="outline"
               onClick={() => setExpanded(!expanded)}
-              className="chip-3d rounded-full px-6 text-foreground"
+              className="glass-card rounded-full px-6 text-foreground font-semibold border-border/80 hover-lift"
             >
               {expanded ? (
                 <>
